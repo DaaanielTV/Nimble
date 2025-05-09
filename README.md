@@ -7,34 +7,36 @@ sdk: docker
 pinned: true
 app_port: 5173
 license: mit
-short_description: Generate any application with deepseek
+short_description: Generate applications efficiently with DeepSeek
 models:
   - deepseek-ai/DeepSeek-V3-0324
 ---
 
 # Nimble 🐳
-Nimble is a coding platform powered by DeepSeek AI, designed to make coding smarter and more efficient. Tailored for developers, data scientists, and AI engineers, it integrates generative AI into your coding projects to enhance creativity and productivity.
 
-## How to use it locally
+Nimble is an advanced development platform powered by DeepSeek AI. It is designed to optimize coding workflows and enhance productivity for professionals in software development, data science, and AI engineering.
 
-Run Nimble locally
+## Local Setup
 
-Clone the repo using git
+Follow the steps below to set up Nimble on your local machine:
 
-git clone https://huggingface.co/spaces/enzostvs/nimble
+1. **Clone the Repository**  
+   Open your terminal and run:  
+   `git clone https://github.com/DaaanielTV/Nimble`
 
-Install the dependencies (make sure node is installed on your machine)
+2. **Install Dependencies**  
+   Ensure that Node.js is installed. Then, install the required packages with:  
+   `npm install`
 
-npm install
+3. **Configure Environment Variables**  
+   Create a `.env` file in the project root and include your Hugging Face token with inference permissions. If you plan to deploy your results in Spaces, include write permissions as well.
 
-Create your .env file and add the HF_TOKEN variable
+4. **Build the Project**  
+   Compile the project by executing:  
+   `npm run build`
 
-Make sure to create a token with inference permissions and optionally write permissions (if you want to deploy your results in Spaces)
+5. **Start the Application**  
+   Launch Nimble by running:  
+   `npm run start`
 
-Build the project
-
-npm run build
-
-Start it and enjoy with a coffee ☕
-
-npm run start
+Enjoy a seamless development experience with Nimble.
