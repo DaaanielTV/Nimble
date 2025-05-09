@@ -87,7 +87,7 @@ function LoadButton({
           </header>
           <main className="px-4 pt-3 pb-4 space-y-3">
             <p className="text-sm text-pink-600 bg-pink-100 rounded-md px-3 py-2">
-              Load an existing DeepSite Space to continue working on it.
+              Load an existing Nimble Space to continue working on it.
             </p>
             <label className="block">
               <p className="text-gray-600 text-sm font-medium mb-1.5">

@@ -38,7 +38,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "dist")));
 
 const getPTag = (repoId) => {
-  return `<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=${repoId}" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p>`;
+  return `<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-nimble.hf.space/logo.svg" alt="Nimble Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-nimble.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >Nimble</a> - 🧬 <a href="https://enzostvs-nimble.hf.space?remix=${repoId}" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p>`;
 };
 
 app.get("/api/login", (_req, res) => {
@@ -177,7 +177,7 @@ colorTo: ${colorTo}
 sdk: static
 pinned: false
 tags:
-  - deepsite
+  - nimble
 ---
 
 Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference`;

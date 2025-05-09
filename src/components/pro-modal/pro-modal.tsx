@@ -47,7 +47,7 @@ function ProModal({
         <main className="px-4 pt-3 pb-4">
           <p className="text-gray-950 text-sm font-semibold flex items-center justify-between">
             Upgrade to a PRO account to activate Inference Providers and
-            continue using DeepSite.
+            continue using Nimble.
           </p>
           <p className="text-sm text-pretty text-gray-500 mt-2">
             It also unlocks thousands of Space apps powered by ZeroGPU for 3d,

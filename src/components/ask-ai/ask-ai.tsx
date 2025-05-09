@@ -82,6 +82,7 @@ function AskAI({
         }
         const reader = request.body.getReader();
         const decoder = new TextDecoder("utf-8");
+        let completeHtml = '';
 
         const read = async () => {
           const { done, value } = await reader.read();
@@ -94,38 +95,22 @@ function AskAI({
             audio.play();
             setView("preview");
 
-            // Now we have the complete HTML including </html>, so set it to be sure
-            const finalDoc = contentResponse.match(
-              /<!DOCTYPE html>[\s\S]*<\/html>/
-            )?.[0];
+            // Only set the HTML once we have the complete response
+            const finalDoc = completeHtml.match(/<!DOCTYPE html>[\s\S]*<\/html>/)?.[0];
             if (finalDoc) {
               setHtml(finalDoc);
             }
-
             return;
           }
 
           const chunk = decoder.decode(value, { stream: true });
-          contentResponse += chunk;
-          const newHtml = contentResponse.match(/<!DOCTYPE html>[\s\S]*/)?.[0];
-          if (newHtml) {
-            // Force-close the HTML tag so the iframe doesn't render half-finished markup
-            let partialDoc = newHtml;
-            if (!partialDoc.includes("</html>")) {
-              partialDoc += "\n</html>";
-            }
-
-            // Throttle the re-renders to avoid flashing/flicker
-            const now = Date.now();
-            if (now - lastRenderTime > 300) {
-              setHtml(partialDoc);
-              lastRenderTime = now;
-            }
-
-            if (partialDoc.length > 200) {
-              onScrollToBottom();
-            }
+          completeHtml += chunk;
+          
+          // Update scroll position for long responses
+          if (completeHtml.length > 200) {
+            onScrollToBottom();
           }
+          
           read();
         };
 
